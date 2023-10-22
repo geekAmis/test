@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Goo</title>
+</head>
+<body>
+	<h1 class="filesIn">
+		
+	</h1>
+
+	<script type="text/javascript">
+		fetch('/api_filesIn')
+		.then((response) => response.json())
+		.then(function(data){
+			console.log(data);
+			for (var i = 0; i < data.length; i++) {
+				document.querySelector('.filesIn').innerHTML += `${data[i]["filename"]}  - size: ${data[i]["size"]}<br>`;
+			}
+			
+		});
+	</script>
+</body>
+</html>
