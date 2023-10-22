@@ -1,23 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Goo</title>
+	<title>Download PyPy libs</title>
 </head>
 <body>
-	<h1 class="filesIn">
-		
-	</h1>
-
-	<script type="text/javascript">
-		fetch('/api_filesIn')
-		.then((response) => response.json())
-		.then(function(data){
-			console.log(data);
-			for (var i = 0; i < data.length; i++) {
-				document.querySelector('.filesIn').innerHTML += `${data[i]["filename"]}  - size: ${data[i]["size"]}<br>`;
-			}
-			
-		});
-	</script>
+	<form action="/" method="POST">
+		<h1>{{desc}}</h1>
+		<input type="text" name="val" >
+		<button type="submit">Download</button>
+	</form>
 </body>
 </html>
